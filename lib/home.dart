@@ -1,3 +1,4 @@
+import 'package:firebaseconnection/editdata.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'form.dart';
@@ -69,35 +70,43 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            width: 325,
-            margin: EdgeInsets.all(30.0),
-            padding: EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 175, 196, 241),
-                borderRadius: BorderRadius.circular(20.0),
-                border: Border.all(
-                  color: Color.fromARGB(255, 179, 179, 182),
-                )),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Label 1',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
-                ),
-                SizedBox(height: 8), // Space between labels
-                Text(
-                  'Label 2',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
-                ),
-                SizedBox(height: 8), // Space between labels
-                Text(
-                  'Label 3',
-                  style: TextStyle(fontSize: 18, color: Colors.black),
-                ),
-              ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => editpage()),
+              );
+            },
+            child: Container(
+              width: 325,
+              margin: EdgeInsets.all(30.0),
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 175, 196, 241),
+                  borderRadius: BorderRadius.circular(20.0),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 179, 179, 182),
+                  )),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Label 1',
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  SizedBox(height: 8), // Space between labels
+                  Text(
+                    'Label 2',
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  SizedBox(height: 8), // Space between labels
+                  Text(
+                    'Label 3',
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
