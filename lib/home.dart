@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: Text('Dashboard'),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
@@ -63,8 +63,50 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Text('Dashboard'),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            width: 325,
+            margin: EdgeInsets.all(30.0),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 175, 196, 241),
+                borderRadius: BorderRadius.circular(20.0),
+                border: Border.all(
+                  color: Color.fromARGB(255, 179, 179, 182),
+                )),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Label 1',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+                SizedBox(height: 8), // Space between labels
+                Text(
+                  'Label 2',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+                SizedBox(height: 8), // Space between labels
+                Text(
+                  'Label 3',
+                  style: TextStyle(fontSize: 18, color: Colors.black),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add action for button press
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.blue,
       ),
     );
   }
