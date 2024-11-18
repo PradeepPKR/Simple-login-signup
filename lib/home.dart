@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'form.dart';
 
 void main() {
   runApp(MyApp());
@@ -103,7 +104,13 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add action for button press
+          Navigator.pop(context); // Close the dialog
+          Navigator.popUntil(context,
+              ModalRoute.withName('/')); // Navigate back to the initial route
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => form()),
+          );
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
